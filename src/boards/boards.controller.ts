@@ -1,5 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { BoardsService } from './boards.service';
+import { Board } from './board.model';
 
 /**
  * nest g controller boards --no-spec
@@ -11,7 +12,7 @@ export class BoardsController {
     constructor(private boardsService: BoardsService) {}
 
     @Get()
-    getAllBoard() {
+    getAllBoard(): Board[] {
         return this.boardsService.getAllBoard();
     }
 }

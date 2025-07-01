@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { Board } from './board.model';
 
 /**
  * nest g service boards --no-spec
@@ -7,9 +8,9 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class BoardsService {
-    private boards = [];
+    private boards: Board[] = [];
 
-    getAllBoard() {
+    getAllBoard(): Board[] {
         return this.boards;
     }
 }
