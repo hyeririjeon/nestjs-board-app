@@ -1,0 +1,15 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "board-app",
+            "group": "board-app",
+            "database": "board-app",
+            "username": "postgres",
+            "password": "a0000"
+        }
+    ]
+}
