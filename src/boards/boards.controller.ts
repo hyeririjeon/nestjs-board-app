@@ -26,7 +26,7 @@ export class BoardsController {
     }
     // :id 파라미터
     @Get('/:id')
-    getBoardById(@Param('id') id: string) {
+    getBoardById(@Param('id') id: string): Board {
         return this.boardsService.getBoardById(id);
     }
 
@@ -39,7 +39,7 @@ export class BoardsController {
     updateBoard(
         @Param('id') id: string,
         @Body('status') status: BoardStatus
-    ): Board | undefined {
+    ): Board {
         return this.boardsService.updateBoardStatus(id, status);
     }
 }
