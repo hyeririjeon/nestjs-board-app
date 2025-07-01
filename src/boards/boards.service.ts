@@ -32,4 +32,8 @@ export class BoardsService {
         return board;
     }
 
+    getBoardById(id: string): Board | undefined {
+        return this.boards.find((board) => board.id === id);
+    }
+
 }
