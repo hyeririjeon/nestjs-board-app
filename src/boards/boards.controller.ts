@@ -2,6 +2,7 @@ import { Body, Controller, Delete, Get, Param, Patch, Post, UsePipes, Validation
 import { BoardsService } from './boards.service';
 import { Board, BoardStatus } from './board.model';
 import { CreateBoardDto } from './dto/create-board.dto';
+import { BoardStatusValidationPipe } from './pipes/board-status-validation.pipe';
 
 /**
  * nest g controller boards --no-spec
@@ -38,7 +39,7 @@ export class BoardsController {
     @Patch('/:id')
     updateBoard(
         @Param('id') id: string,
-        @Body('status') status: BoardStatus
+        @Body('status', BoardStatusValidationPipe) status: BoardStatus
     ): Board {
         return this.boardsService.updateBoardStatus(id, status);
     }
